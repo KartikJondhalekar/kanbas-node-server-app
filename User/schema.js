@@ -9,13 +9,13 @@ const userSchema = new mongoose.Schema({
     dob: Date,
     role: {
         type: String,
-        enum: ["STUDENT", "FACULTY", "ADMIN", "USER"],
+        enum: ["STUDENT", "FACULTY"],
         default: "USER",
     },
     loginId: String,
     section: String,
     lastActivity: Date,
-    totalActivity: String,
+    totalActivity: String
 },
     { collection: "users" }
 );

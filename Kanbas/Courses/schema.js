@@ -9,7 +9,8 @@ const courseSchema = new mongoose.Schema({
     credits: Number,
     description: { type: String, required: true },
     image: String,
-    author: String
+    author: String,
+    users: [String],
 },
     { collection: "courses" }
 );

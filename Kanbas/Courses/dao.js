@@ -10,3 +10,12 @@ export const createCourse = (course) => {
 };
 
 export const deleteCourse = (course_id) => model.deleteOne({ _id: course_id });
+
+export const getEnrolledCourses = (user_id) => model.find({ users: user_id });
+
+export const getAuthCourses = (auth_id) => model.find({ author: auth_id });
+
+export const getUnenrolledCourses = (user_id) => model.find({ users: { $ne: user_id } });
+
+export const enrollCourse = (course_id, user_id) => model.updateOne({ _id: course_id }, { $push: { users: user_id } });
+
